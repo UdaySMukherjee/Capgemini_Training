@@ -12,12 +12,13 @@ public class FibonacciSeries {
 		System.out.println(first);
 		System.out.println(second);
 		int next = first+second;
-		System.out.println(next);
+		//System.out.println(next);
 		while(next<range) {
+			System.out.println(next);
 			first = second;
 			second = next;
 			next = first+second;
-			System.out.println(next);
+			
 		}
 	}
 }
