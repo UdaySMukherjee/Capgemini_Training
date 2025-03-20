@@ -1,7 +1,7 @@
 class Swap{
 	public static void main(String args[]){
-		int a = 10;
-		int b = 20;
+		int a = 5;
+		int b = 25;
 		System.out.println("original a is "+a+" Original b is "+b);
 		int tmp = a;
 		a = b;
