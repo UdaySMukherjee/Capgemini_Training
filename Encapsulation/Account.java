@@ -1,34 +1,49 @@
 package Encapsulation;
 
-public class Account {
-	private String AccountHoldersName;
-	private double Balance;
-	private long AccountNumber;
-	
-	Account(String AccountHoldersName,double Balance,long AccountNumber){
-		this.AccountHoldersName = AccountHoldersName;
-		this.Balance = Balance;
-		this.AccountNumber = AccountNumber;
-		System.out.print("Account Created");
-	}
-	
-	public String setAccountHoldersName() {
-		return this.AccountHoldersName;
-	}
-	public double setBalance() {
-		return this.Balance;
-	}
-	public long setAccountNumber() {
-		return this.AccountNumber;
-	}
-	
-	public void getAccountHoldersName(String AccountHoldersName) {
-		this.AccountHoldersName = AccountHoldersName;
-	}
-	public void getBalance(double Balance) {
-		this.Balance = Balance;
-	}
-	public void getAccountNumber(long AccountNumber) {
-		this.AccountNumber = AccountNumber;
-	}
+public class Account{
+    private String accountHolderName;
+    private double balance;
+    private int accountNumber;
+
+    Account(String name){
+        this.accountHolderName =name;
+        this.balance=0.0;
+        this.accountNumber=001;
+        System.out.println("Account is created successfully!");
+    }
+    Account(String name, double amount){
+        this.accountHolderName =name;
+        this.balance=amount;
+        this.accountNumber=001;
+        System.out.println("Account is created successfully with initial amount "+amount);
+    }
+
+    // Getter start
+    public void getAccountName(){
+        System.out.println("Account holder name: "+this.accountHolderName);
+    }
+    public void getAccountbalance(){
+        System.out.println("Account balance: "+this.balance);
+    }
+    public void getAccountNunmber(){
+        System.out.println("Account number: "+this.accountNumber);
+    }
+    // Getter end
+
+    // Setter
+    public void withdrawamount(double amount){
+        if(this.balance>=amount){
+            this.balance = this.balance - amount;
+            System.out.println(amount+" withdrawal is successfull!");
+        }
+        else{
+            System.out.println("Insufficient balance!");
+        }
+    }
+
+    public void depositAmount(double amount){
+        this.balance+=amount;
+        System.out.println(amount+" is deposited successfully!");
+    }
+    // Setter end
 }
