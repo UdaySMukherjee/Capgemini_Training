@@ -18,12 +18,6 @@ public class Student implements Comparable{
 	@Override
 	public int compareTo(Object o) {
 		Student s = (Student)o;
-		if(this.rollno > s.rollno) {
-			return 1;
-		}if(this.rollno < s.rollno) {
-			return -1;
-		}else{
-			return 0;
-		}
+		return this.rollno-s.rollno;
 	}
 }
