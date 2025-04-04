@@ -16,10 +16,10 @@ public class Student implements Comparable{
 	}
 	
 	@Override
-	public int compareTo(Object o) {
-		Student s = (Student)o;
+	public int compareTo(Student s) {
 //		return this.rollno-s.rollno; //ascending
 //		return s.rollno-this.rollno; //descending
-		return Double.compare(this.percentage, s.percentage);//ascending
+//		return Double.compare(this.percentage, s.percentage);//ascending
+		return this.name.compareTo(s.name);
 	}
 }
