@@ -27,7 +27,7 @@ public class SinglyLinkedList {
 		size++;
 		return true;
 	}
-	
+		
 	public boolean insertAtIndex(int value, int index) {
 		if(index<=0) {
 			return prepend(value);
@@ -45,6 +45,57 @@ public class SinglyLinkedList {
 			}
 			previousNode.next = newNode;
 			newNode.next = currentNode;
+		}
+		size++;
+		return true;
+	}
+	
+	public boolean deleteAtEnd() {
+		if(isEmpty()) {
+			System.out.println("Empty Linked List");
+			return true;
+		}else if(head.next==null) {
+			head = null;
+			tail = null;
+		}else {
+			Node temp = head;
+			while(temp.next!=tail) {
+				temp=temp.next;
+			}
+			temp.next=null;
+			tail=temp;
+		}
+		size--;
+		return true;
+	}
+	
+	public boolean deleteFromFirst() {
+		if(isEmpty()) {
+			System.out.println("Empty Linked List");
+			return true;
+		}else if(head.next==null) {
+			head = null;
+			tail = null;
+		}else {
+			head = head.next;
+		}
+		size--;
+		return true;
+	}
+	
+	public boolean deleteAtIndex(int index) {
+		if(index<=0) {
+			return deleteFromFirst();
+		}else if(index>size) {
+			return deleteAtEnd();
+		}else {
+			Node currentNode = head;
+			int currentIndex = 0;
+			while(currentIndex<index-1) {
+				currentIndex++;
+				currentNode = currentNode.next;
+			}
+			currentNode.next = currentNode.next.next;
 		}
 		size++;
 		return true;
