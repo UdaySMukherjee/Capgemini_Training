@@ -50,6 +50,25 @@ public class SinglyLinkedList {
 		return true;
 	}
 	
+	public boolean updateAtIndex(int value, int index) {
+		if(isEmpty()) {
+			System.out.println("Empty Linked List");
+			return true;
+		}else if(index<0 || index>size) {
+			return false;
+		}else {
+			Node currentNode = head;
+
+			int currentIndex = 0;
+			while(currentIndex<index) {
+				currentIndex++;
+				currentNode = currentNode.next;
+			}
+			currentNode.value=value;
+		}
+		return true;
+	}
+	
 	public boolean deleteAtEnd() {
 		if(isEmpty()) {
 			System.out.println("Empty Linked List");
@@ -97,8 +116,32 @@ public class SinglyLinkedList {
 			}
 			currentNode.next = currentNode.next.next;
 		}
-		size++;
+		size--;
 		return true;
+	}
+	
+	public boolean reverse() {
+		if(isEmpty()) {
+			System.out.println("Linked List Empty");
+			return false;
+		}else {
+			Node prev = null;
+			Node current = head;
+			Node next = null;
+			while (current != null) {
+				next = current.next;
+				current.next = prev;
+				prev = current;
+				current = next;
+			}
+			tail = head;
+			head = prev;
+			return true;
+		}
+	}
+	
+	public int getSize() {
+		return this.size;
 	}
 
 	public boolean isEmpty() {
