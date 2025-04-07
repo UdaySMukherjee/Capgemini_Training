@@ -12,11 +12,16 @@ public class SinglyLinkedListDriver {
 		list.display();
 		list.insertAtIndex(100, 3);
 		list.display();
+		list.updateAtIndex(6900, 3);
+		list.display();
 		list.deleteAtEnd();
 		list.display();
 		list.deleteFromFirst();
 		list.display();
 		list.deleteAtIndex(2);
+		list.display();
+		System.out.println(list.getSize());
+		list.reverse();
 		list.display();
 	}
 }
