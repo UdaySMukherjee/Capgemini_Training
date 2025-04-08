@@ -23,5 +23,6 @@ public class SinglyLinkedListDriver {
 		System.out.println(list.getSize());
 		list.reverse();
 		list.display();
+		System.out.println(list.search(10));
 	}
 }
