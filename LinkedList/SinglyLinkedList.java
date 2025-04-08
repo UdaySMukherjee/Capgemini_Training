@@ -139,6 +139,20 @@ public class SinglyLinkedList {
 			return true;
 		}
 	}
+
+	public int search(int num) {
+		Node currentNode = head;
+		int currentIndex = 0;
+		while(currentNode!=null) {
+			if(currentNode.value==num) {
+				return currentIndex;
+			}else {
+				currentIndex++;
+				currentNode = currentNode.next;
+			}
+		}
+		return -1;
+	}
 	
 	public int getSize() {
 		return this.size;
