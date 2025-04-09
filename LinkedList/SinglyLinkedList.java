@@ -154,6 +154,20 @@ public class SinglyLinkedList {
 		return -1;
 	}
 	
+	public int SearchIndex(int index) {
+		if(index>size || index<0) {
+			return -1;
+		}else {
+			Node temp = head;
+			int i = 0;
+			while(temp!=null && i<index) {
+				temp = temp.next;
+				i++;
+			}
+			return temp.value;
+		}
+	}
+	
 	public int getSize() {
 		return this.size;
 	}
