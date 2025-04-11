@@ -17,6 +17,36 @@ public class HashMap {
 			buckets[i] = new LinkedList<>();
 		}
 	}
+
+	public String get(int key) {
+		int bi = hashFunction(key);
+		int di = getDataIndex(bi , key);
+		if(di==-1) {
+			return null;
+		}else {
+			return buckets[bi].get(di).value;
+		}
+		
+	}
+	
+	public boolean contains(int key) {
+		int bi = hashFunction(key);
+		int di = getDataIndex(bi , key);
+		if(di==-1) {
+			return false;
+		}else {
+			for(int i=0; i< buckets.length; i++) {
+				LinkedList<Node> list = buckets[i];
+				for(int j=0; j<list.size();j++) {
+					Node node = list.get(j);
+					if(node.key==key)
+						return true;
+				}
+			}
+		}
+		return false;
+		
+	}
 	
 	public void put(int key, String value) {
 		int bi = hashFunction(key);
