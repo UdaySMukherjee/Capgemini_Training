@@ -12,5 +12,8 @@ public class HashMapDriver {
 		map.put(0, "mkc");
 		map.display();
 		System.out.println(map.getSize());
+		System.out.println(map.get(0));
+		System.out.println(map.get(5));
+		System.out.println(map.contains(5));
 	}
 }
