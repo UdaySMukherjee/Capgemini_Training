@@ -39,11 +39,11 @@ public class HashMap {
 		LinkedList<Node>[] old = buckets;
 		
 		buckets = new LinkedList[N*2];
-		
+		N=buckets.length;
 		for(int i=0; i<buckets.length; i++) {
 			buckets[i] = new LinkedList<>();
 		}
-		
+		n=0;
 		for(int i=0; i< old.length; i++) {
 			LinkedList<Node> list = old[i];
 			for(int j=0; j<list.size();j++) {
