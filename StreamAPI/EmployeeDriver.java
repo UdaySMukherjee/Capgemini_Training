@@ -30,13 +30,20 @@ public class EmployeeDriver {
 		System.out.println("Detail of employee with maximum age : ");
 		System.out.println(empList.stream().max((e1,e2)->e1.getAge()-e2.getAge()).get());
 		System.out.println("Youngest Female Employee : ");
-		System.out.println(empList.stream().filter(s->s.getGender()=="F").min((e1,e2)->e1.getAge()-e2.getAge()).get());
+		System.out.println(empList.stream().filter(s->s.getGender().equals("F")).min((e1,e2)->e1.getAge()-e2.getAge()).get());
 		System.out.println("Find employee whose age is >25 and <30 : ");
+		System.out.println(empList.stream().filter(s->s.getAge()>25).filter(s->s.getAge()<30).toList());
 		System.out.println("Find employee from HR Department : ");
+		System.out.println(empList.stream().filter(s->s.getDeptName().equals("HR")).toList());
 		System.out.println("Find employee who live in Blore sort them by their name then print only the names of employees : ");
+		System.out.println(empList.stream().filter(s->s.getCity().equals("Blore")).map(Employee::getName).toList());
 		System.out.println("Print total no. of employees : ");
+		System.out.println(empList.stream().count());
 		System.out.println("Sort employees based on age : ");
+		System.out.println(empList.stream().sorted((e1,e2)->e1.getAge()-e2.getAge()).toList());
 		System.out.println("Find the highest experienced employee (from year of joining): ");
+		System.out.println(empList.stream().min((e1,e2)->e1.getYearOfJoining()-e2.getYearOfJoining()).get());
 		System.out.println("Find the highest salary : ");
+		System.out.println(empList.stream().map(Employee::getSalary).max(Long::compareTo).get());
 	}
 }
