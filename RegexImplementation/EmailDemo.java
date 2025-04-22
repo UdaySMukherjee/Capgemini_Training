@@ -2,7 +2,7 @@ package RegexImplementation;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Demo {
+public class EmailDemo {
 	
 	public static void main(String[] args) {
 		String email = "Smaple@gmail.com";
