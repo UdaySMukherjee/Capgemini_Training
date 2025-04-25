@@ -1,8 +1,13 @@
 package CSVHandling;
 
+import com.opencsv.bean.CsvBindByName;
+
 public class Employee {
+	@CsvBindByName(column="Employee_name")
 	private String name;
+	@CsvBindByName(column="Employee_age")
 	private int age;
+	@CsvBindByName(column="Employee_salary")
 	private double salary;
 	public String getName() {
 		return name;
